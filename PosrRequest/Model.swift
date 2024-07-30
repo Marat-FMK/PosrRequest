@@ -7,12 +7,20 @@
 
 import Foundation
 
+
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodinError
+}
+
 enum Link: String {
     case urlForRequest = "https://jsonplaceholder.typicode.com/posts"
 }
 
-struct Man {
-    let name = "Piter"
-    let surname = "Pen"
-    let age = "17"
-}
+struct Man: Codable {
+    let name: String
+    let surname: String
+    let age: String
+    }
+
